@@ -11,7 +11,19 @@ use develop2 branch to view my material.
     *The current state allows me to connect and perform table creations, and table drops. 
     *however alterations and insertions are not completing as intended
     *looking into what it takes to do an insert.
-    
+   
+#install notes:
+	*if pip install does not cooperate while in pycharm do the following:
+		*(assuming project is still a pycharm project for this instruction set)
+		*go to the virtual enviroment folder (either in cmd/powershell or file explore)
+		*go to the scrips folder
+		*should be here: project1\venv\Scripts
+		*with cmd/powershell open, we can run the pip from here.
+			* powershell [tab] to .\pip this opens the pip cmd app.
+		*now we can run the pip commands as intended
+		*in this case ```install mysql-connector-python```
+		*this should install for THIS project, not nessesarly for the local install of python.
+
  
    
 
