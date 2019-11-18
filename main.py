@@ -2,8 +2,18 @@ import ssl
 from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
-import pyodbc
+import mysql.connector
 import json
+
+localhostdb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="popop123",
+    database="player_entry"
+)
+
+activecursor = localhostdb.cursor()
+
 
 site= "https://pastebin.com/raw/Bjsw46PD"
 hdr = {'User-Agent': 'Mozilla/5.0'}
@@ -39,18 +49,11 @@ for element in medstr:
 listToDict = {'index': values, 'names': entity}
 print(json.dumps(listToDict))
 
+activecursor.execute("insert into players values ('1','player')")
 
-
-#connString = 'Trusted_Connection=no;DRIVER={ODBC Driver 18 for SQL Server};' \
-#             'SERVER=@localhost\\MySQL;PORT=3306;DATABASE=test;UID=root;PWD=;'
-#try:
-#    cn = pyodbc.connect(connString)
- #   print('You are connected to db ')
-
-#except Exception as e:
- #   print('Error connecting to databse: ', str(e))
-
-#finally:
- #   cn.close()
-  #  print('Connection closed')
-
+#
+#attmpts at using odbc over mysql connector
+#This will print the drivers installed with the py odbc install.
+#for driver in pyodbc.drivers():
+#    print(driver)
+#
