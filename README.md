@@ -11,6 +11,8 @@ use develop2 branch to view my material.
     *The current state allows me to connect and perform table creations, and table drops. 
     *however alterations and insertions are not completing as intended
     *looking into what it takes to do an insert.
+	
+*log: 11/18/19: I moved develop2 to the master branch and removed the develop branch.
    
 #install notes:
 	*if pip install does not cooperate while in pycharm do the following:

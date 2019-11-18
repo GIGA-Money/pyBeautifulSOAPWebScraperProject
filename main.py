@@ -8,7 +8,7 @@ import json
 localhostdb = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="popop123",
+    passwd="rooter",
     database="player_entry"
 )
 
