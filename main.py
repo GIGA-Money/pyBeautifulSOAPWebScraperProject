@@ -14,6 +14,8 @@ localhostdb = mysql.connector.connect(
 
 activecursor = localhostdb.cursor()
 
+activecursor.execute("create table players(ID varcharacter(15), player_name varcharacter(255), primary key (ID))")
+#activecursor.execute("insert into player_entry.players values ('1','player')")
 
 site= "https://pastebin.com/raw/Bjsw46PD"
 hdr = {'User-Agent': 'Mozilla/5.0'}
@@ -49,7 +51,6 @@ for element in medstr:
 listToDict = {'index': values, 'names': entity}
 print(json.dumps(listToDict))
 
-activecursor.execute("insert into players values ('1','player')")
 
 #
 #attmpts at using odbc over mysql connector

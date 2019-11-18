@@ -6,8 +6,12 @@ use develop2 branch to view my material.
 *log: 11/17/19 The current state still does not connect to a DB correctly, the mysqlLb solution to connect to the localhost db did not want to work on windows.
 *Current state just gets the data from the link, and moves the data into a json file
 
-*LOG: 11/18/19 was able to connect suing the mysql connector, followed YT link at ```https://www.youtube.com/watch?v=3vsC05rxZ8c```
+*LOG: 11/18/19 was able to connect using the mysql connector, followed YT link at ```https://www.youtube.com/watch?v=3vsC05rxZ8c```
     *The link shows how to install and connect the the locally hosted mysql db.
+    *The current state allows me to connect and perform table creations, and table drops. 
+    *however alterations and insertions are not completing as intended
+    *looking into what it takes to do an insert.
+    
  
    
 
