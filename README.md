@@ -14,6 +14,11 @@ use develop2 branch to view my material.
 	
 *log: 11/18/19: I moved develop2 to the master branch and removed the develop branch.
    
+*LOG: 11/28/19: updated main to a usable version. Should insert into local database. 
+	*Extracted loose actions into methods. 
+	*Added commits for methods added. 
+	*Added commits for other areas of interest.
+   
 #install notes:
 	*if pip install does not cooperate while in pycharm do the following:
 		*(assuming project is still a pycharm project for this instruction set)
