@@ -51,11 +51,11 @@ def insertion():
     # values (index, player name)
     #
     vdex = 0
-    for vdex in values:
-        for edex in entity:
-            activeCursor.execute("insert into players(ID, player_name) values(%s,%s)", (vdex, edex))
-            print(vdex + '\t' + edex)
-
+    # for vdex in values:
+    for edex in entity:
+        activeCursor.execute("insert into players(ID, player_name) values(%s,%s)", (str(vdex), edex))
+        print( '\t' + edex)
+        vdex += 1
 
 
 #
@@ -88,7 +88,7 @@ localhost = mariadb.connect(
 activeCursor = localhost.cursor()
 
 try:
-    # activeCursor.execute("drop table if exists players")
+    activeCursor.execute("drop table if exists players")
     activeCursor.execute("create table if not exists players(ID varcharacter(15), "
                          "player_name varcharacter(255))")
 

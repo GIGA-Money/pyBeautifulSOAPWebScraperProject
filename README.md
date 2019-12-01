@@ -23,6 +23,7 @@ use develop2 branch to view my material.
 		*data is inserted but there is a major error in the insertion loop that is causing issues 
 		*the issues: the ID field is not incramented correctly so there is repeted information
 		*the issues: this id error lead to repeted name entry.
+*LOG: 11/30/19: using a version that just inserts an artificial ID.
    
 #install notes:
 	*if pip install does not cooperate while in pycharm do the following:
