@@ -18,6 +18,11 @@ use develop2 branch to view my material.
 	*Extracted loose actions into methods. 
 	*Added commits for methods added. 
 	*Added commits for other areas of interest.
+
+*LOG: 11/30/19: updated main to insert into mariadb connection
+		*data is inserted but there is a major error in the insertion loop that is causing issues 
+		*the issues: the ID field is not incramented correctly so there is repeted information
+		*the issues: this id error lead to repeted name entry.
    
 #install notes:
 	*if pip install does not cooperate while in pycharm do the following:

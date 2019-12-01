@@ -2,7 +2,7 @@ import ssl
 from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
-import mysql.connector
+import mysql.connector as mariadb
 
 
 #
@@ -47,9 +47,16 @@ def splint_string():
 
 
 def insertion():
+    #
+    # values (index, player name)
+    #
+    vdex = 0
     for vdex in values:
         for edex in entity:
-            activeCursor.execute("insert into players values ('%s','%s')" % (vdex, edex))
+            activeCursor.execute("insert into players(ID, player_name) values(%s,%s)", (vdex, edex))
+            print(vdex + '\t' + edex)
+
+
 
 #
 # All of the global variables used below.
@@ -69,30 +76,27 @@ entity = []
 
 splint_string()
 
-# Connect to the mysql db.
+# Connect to the Mariadb.
 
-
-localhost = mysql.connector.connect(
+localhost = mariadb.connect(
     host="localhost",
+    port='3360',
     user="root",
-    passwd="rooter",
+    passwd="root",
     database="player_entry"
 )
 activeCursor = localhost.cursor()
 
 try:
-
+    # activeCursor.execute("drop table if exists players")
     activeCursor.execute("create table if not exists players(ID varcharacter(15), "
-                         "player_name varcharacter(255), primary key (ID))")
-    #
-    # values (index, player name)
-    #
+                         "player_name varcharacter(255))")
 
     insertion()
 
-except mysql.connector.Error as errors:
-    print(errors)
+except mariadb.Error as errors:
+    print('errors: {}'.format(errors))
 finally:
-    activeCursor.commit()
+    localhost.commit()
     if activeCursor: activeCursor.close()
     if localhost: localhost.close()
